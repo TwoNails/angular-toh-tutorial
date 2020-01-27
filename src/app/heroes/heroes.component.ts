@@ -34,7 +34,7 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     /* this.heroes = this.heroService.getHeroes();
     mock used as a simple var, sync */
-    this.heroService.getHeroes().suscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
     // mock properly simulating an async behavior
   }
 
