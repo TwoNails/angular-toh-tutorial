@@ -17,7 +17,9 @@ import { MessageService } from './message.service';
   
   declarations: [ 
                   AppComponent, 
-                  HeroesComponent, HeroDetailComponent, MessagesComponent
+                  HeroesComponent, 
+                  HeroDetailComponent, 
+                  MessagesComponent
                 ],
 
   bootstrap:    [ AppComponent ],
