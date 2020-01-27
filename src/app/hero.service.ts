@@ -3,14 +3,11 @@ import { Injectable } from '@angular/core';
 aka putting it into a component constructor to 
 use it inside that component */
 import { Observable, of } from 'rxjs';
+/* the open source library rxjs offers solutions that Angular uses. It aims at facilitating asynchronous requests */
 
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
-
-
-/* the open source library rxjs offers solutions that Angular uses. It aims at facilitating asynchronous requests */
-
-
+import { MessageService } from './message.service';
 
 
 /* we use here the Injectable Decorator we imported above. root will 'provide' a decorator, which means
@@ -21,11 +18,15 @@ it will provide on demand to the components that need it*/
 )
 export class HeroService {
 
-  constructor() { }
+  constructor(
+                private messageService: MessageService
+              ) { }
 
   // get
   getHeroes(): Observable<Hero[]> {
-    // return HEROES
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add('HeroService : fetched Heroes');
+    // return HEROES 
     return of(HEROES);
   }
 
