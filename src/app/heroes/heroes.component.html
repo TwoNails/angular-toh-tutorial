@@ -1,0 +1,16 @@
+<h2></h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" 
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero"
+      >
+      <!-- for all hero of heroes, add the following HTML 
+      listen to the click event and apply the onSelect func
+      apply it the selected css class if that hero of heroes is equal to selectedHero (see main app comp)
+      -->
+      <span class='badge'>{{hero.id}}</span> {{hero.name}}</li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
